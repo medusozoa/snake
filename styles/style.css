@@ -18,7 +18,7 @@ body{
 }
 
 .snake{
-    background-color: hsl(200,100%, 50%);
+    background-color: rgb(2, 173, 68);
     border: .25vmin solid black;
     
 }
