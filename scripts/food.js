@@ -8,6 +8,8 @@ export var snakeSpeed = 10
 export var foodType = 0 
 export var lastFoodtype = 0
 var firstRun = true
+var score = 0
+var puName = ''
 
 function getFoodType(){
     if(firstRun === true){
@@ -23,14 +25,17 @@ function getFoodStyle(type){
     if (type == 1){
         // double growth
         foodStyle = 'foodPower'
+        puName = 'Double-up'
     } 
     else if (type == 2){
         // speed up for 10 seconds
         foodStyle = 'foodSpeed'
+        puName = 'Speed-Run'
     } 
     else {
         // regular snake
         foodStyle = 'food'
+        puName = 'Normal'
     }
     return foodStyle
 }
@@ -72,13 +77,17 @@ function getSnakeExpansion(type){
 export function update(){
     if (onSnake(food)){
         getFoodType()
-        console.log(foodType)
         foodStyle = getFoodStyle(foodType)
         expansionRate = getSnakeExpansion(foodType)
 
         expandSnake(expansionRate)
         food = getRandomFoodPosition()
         snakeSpeed = getSnakeSpeed(lastFoodtype)
+
+        score += 1
+        document.getElementById('score').innerHTML = score.toString()
+        document.getElementById('puName').innerHTML = puName
+
     }
 }
 

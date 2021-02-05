@@ -9,9 +9,10 @@ body{
 }
 
 #game-board{
+    margin: 10px;
     background-color: #CCC;
-    width: 100vmin;
-    height: 100vmin;
+    width: 80vmin;
+    height: 80vmin;
     display: grid;
     grid-template-rows: repeat(21, 1fr);
     grid-template-columns: repeat(21, 1fr);
@@ -36,4 +37,10 @@ body{
 .foodPower{
     background-color: hsl(0, 100%, 50%);
     border: .25vmin solid black;
+}
+
+h1,h3{
+    font-family: sans-serif;
+    background-color: black;
+    color:hsl(0, 0%, 100%)
 }
